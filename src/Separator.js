@@ -9,6 +9,7 @@ function separator(events) {
   let tmpListEvent = [];
   let tmpEvent;
   let timeStart;
+  let tmpTime;
   let timeEnd;
   let days;
   let currStartTime;
@@ -22,8 +23,10 @@ function separator(events) {
 
     timeStart = moment(tmpEvent.start);
     timeEnd = moment(tmpEvent.end);
+    
+    tmpTime = timeStart;
     timeStart = timeStart < timeEnd ? timeStart : timeEnd;
-    timeEnd = timeEnd > timeStart ? timeEnd : timeStart;
+    timeEnd = timeEnd > tmpTime ? timeEnd : tmpTime;
 
     days = Math.abs(timeStart.diff(timeEnd, 'days'));
     currStartTime = timeStart;
