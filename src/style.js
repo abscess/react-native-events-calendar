@@ -31,12 +31,14 @@ export default function styleConstructor (
       ...theme.header
     },
     headerText: {
-      fontSize: 16
+      fontSize: 16,
+      ...theme.headerText
     },
     arrow: {
       width: 15,
       height: 15,
-      resizeMode: 'contain'
+      resizeMode: 'contain',
+      ...theme.arrow
     },
     event: {
       position: 'absolute',
