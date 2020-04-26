@@ -28,7 +28,7 @@ function separator(events) {
     timeStart = timeStart < timeEnd ? timeStart : timeEnd;
     timeEnd = timeEnd > tmpTime ? timeEnd : tmpTime;
 
-    days = Math.abs(timeStart.diff(timeEnd, 'days'));
+    days = Math.abs(timeStart.clone().startOf('day').diff(timeEnd.clone().startOf('day'), 'days'));
     currStartTime = timeStart;
     do {
       tmpListEvent.push({
